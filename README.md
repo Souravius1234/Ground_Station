@@ -8,6 +8,9 @@
 ## Demonstration of Ground Station GUI with live telemetry
   https://www.youtube.com/@lalittt
 
+# GUI Screenshot
+![alt text](GUI_Screenshot.png)
+
 
 # Description
 General description of the telemetry GUI
