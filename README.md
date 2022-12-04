@@ -9,7 +9,7 @@
   https://www.youtube.com/@lalittt
 
 # GUI Screenshot
-![alt text](GUI_Screenshot.png)
+![alt text](GS_GUI_Screenshot.png)
 
 
 # Description
