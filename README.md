@@ -5,8 +5,8 @@
 * The telemetry GUI is developed in MATLAB using the App Designer tool.
 * An example code is provided for Arduino to behave as a receiver that transmits the received data from the Flight Computer to MATLAB.
 
-## Demonstration of Ground Station GUI with live telemetry
-  https://www.youtube.com/@lalittt
+## Demonstration 
+  [Ground Station (GUI) Telemetry Demonstration](https://www.youtube.com/watch?v=vqx3Z946B_U)
 
 # GUI Screenshot
 ![alt text](GS_GUI_Screenshot.png)
