@@ -6,7 +6,7 @@
 * An example code is provided for Arduino to behave as a receiver that transmits the received data from the Flight Computer to MATLAB.
 
 ## Demonstration 
-  [Ground Station (GUI) Telemetry Demonstration](< a href = "https://www.youtube.com/watch?v=vqx3Z946B_U"  target="_blank" >)
+  [Ground Station (GUI) Telemetry Demonstration](<a href = "https://www.youtube.com/watch?v=vqx3Z946B_U"  target="_blank">)
 
 # GUI Screenshot
 ![alt text](GS_GUI_Screenshot.png)
