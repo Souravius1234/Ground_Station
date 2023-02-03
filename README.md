@@ -9,7 +9,7 @@
   [Ground Station (GUI) Telemetry Demonstration](https://www.youtube.com/watch?v=vqx3Z946B_U) 
 
 # GUI Screenshot
-![alt text](GS_GUI_Screenshot.png)
+![alt text](GUI_MATLAB_Screenshot.png)
 
 
 # Description
