@@ -35,7 +35,7 @@ for port, desc, hwid in sorted(ports):
         #print(ComPortAvailable)
 
 # -- [Step 2] -> Initialize Serial Communication
-dataFromSerial = serial.Serial(ComPortAvailable,115200, timeout = 1) 
+dataFromSerial = serial.Serial(ComPortAvailable,9600, timeout = 1) 
 
 global rawData
 # ----------------------------------------------------------------------------------------------------------------------------------
@@ -137,7 +137,7 @@ def startTelemetry():
     button_StartStopIndicator.grid(row = 0, column = 2)
 #   Telemetry variables           
     global receivedTelemetry
-    receivedTelemetry = dataFromSerial.readline().decode('ascii')
+    receivedTelemetry = dataFromSerial.readline().decode('windows-1252')
 #   Removing \r\n from the end of the received data     
     receivedTelemetry = receivedTelemetry.rstrip("\r\n")
     global rawData
