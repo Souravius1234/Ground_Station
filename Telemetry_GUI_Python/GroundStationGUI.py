@@ -138,6 +138,8 @@ def startTelemetry():
 #   Telemetry variables           
     global receivedTelemetry
     receivedTelemetry = dataFromSerial.readline().decode('ascii')
+#   Removing \r\n from the end of the received data     
+    receivedTelemetry = receivedTelemetry.rstrip("\r\n")
     global rawData
     rawData = receivedTelemetry
 #   Print Raw Telemetry for debugging    
@@ -147,7 +149,7 @@ def startTelemetry():
 #   Print Split data for debugging
    #print(splitData)
     if len(splitData) > 1:
-        if (splitData[0] == "<") and (splitData[18] == ">"):
+        if (splitData[0] == "<") and (splitData[17] == ">"):
     #       Displaying Received Data [Numerically]        
     #       Data_1 = GPS_Fix
             labelVal_GPSFix = Label(frame_Second_Layer, text = splitData[1], width = 12, height = 1, anchor="w", relief = "sunken" )
