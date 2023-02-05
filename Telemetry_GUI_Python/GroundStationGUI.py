@@ -18,7 +18,7 @@ import continuous_threading
 # -- Creating main window widget
 mainWindow = Tk()
 # -- Configuring window
-mainWindow.title("Ground Station: Telemetry")
+mainWindow.title("[ Lalitk.space ] Ground Station: Telemetry")
 # -- Main Window Dimensions
 mainWindow.geometry("1150x500") 
 # -- main Window Icon
