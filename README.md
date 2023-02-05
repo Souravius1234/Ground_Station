@@ -2,20 +2,21 @@
  Ground Station (GUI) to receive and visualize live telemetry.
 
 * The project is developed to visualize live telemetry from a Flight Computer that I have developed.
-* The telemetry GUI is developed in MATLAB using the App Designer tool.
-* An example code is provided for Arduino to behave as a receiver that transmits the received data from the Flight Computer to MATLAB.
+* Two telemetry GUIs are developed, one in MATLAB using the App Designer tool and another one using Python (Tkinter) GUI toolkit.
+* An example code is provided for Arduino to behave as a flight data receiver that transmits the received telemetry serially to the Ground Station GUI. <br>
+The primary purpose of the example code is to understand the telemetry format that must be transmitted to the GUI. The GUI will decode the received data and display it. </b>
 
 ## Demonstration 
   [Ground Station (GUI) Telemetry Demonstration](https://www.youtube.com/watch?v=vqx3Z946B_U) 
 
-# GUI Screenshot
-![alt text](GUI_MATLAB_Screenshot.png)
+# GUI Screenshot [MATLAB]
+![developed in MATLAB](GUI_MATLAB_Screenshot.png)
 
+# GUI Screenshot [Python]
+![Developed using Python](GUI_Python_Screenshot.png)
 
 # Description
 General description of the telemetry GUI
-
-* MATLAB receives the data from the receiver (Arduino-based system) as a string and splits the data into individual flight data.
 
 ### `GUI is capable of visualizing`
   1. `GPS data` 
