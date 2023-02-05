@@ -37,6 +37,7 @@ for port, desc, hwid in sorted(ports):
 # -- [Step 2] -> Initialize Serial Communication
 dataFromSerial = serial.Serial(ComPortAvailable,9600, timeout = 1) 
 
+# To hold raw telemetry data [directly from serial]
 global rawData
 # ----------------------------------------------------------------------------------------------------------------------------------
 #                                               Frame and Labels
@@ -124,14 +125,12 @@ Labelframe_RawData.grid(row = 0, column = 0, padx = 25, pady = 20)
 labelName_RawData = Label(Labelframe_RawData, text = "<,data,>", width = 80, height = 2, anchor="center")
 labelName_RawData.grid(row = 0, column = 0)   
 
-
-
 # ----------------------------------------------------------------------------------------------------------------------------------
 #                                                       Functions
 # ----------------------------------------------------------------------------------------------------------------------------------
-# -- Start Receiving Telemetry Data
-def startTelemetry():
-    
+
+# Start reading and displaying Telemetry Data
+def startTelemetry():    
 #   Update Start/Stop indicator Color [START = GREEN lightish Shade #00E600]
     button_StartStopIndicator = Button(frame_Controls, width = 2, height = 1, bg = "#00E600")
     button_StartStopIndicator.grid(row = 0, column = 2)
@@ -211,6 +210,7 @@ def startTelemetry():
         labelName_RawData = Label(Labelframe_RawData, text = "Telemetry Error", width = 80, height = 2, anchor="center")
         labelName_RawData.grid(row = 0, column = 0)         
 
+# To pause the continuous thread [thread_ShowData]
 def stopTelemetry():
 #   pause the Continuous Thread (startTelemetry())    
     thread_ShowData.stop()
@@ -221,12 +221,65 @@ def stopTelemetry():
     button_Exit = Button(frameExit, text = "Exit", width = 4, height = 1, command = mainWindow.quit, state = "active")
     button_Exit.grid(row = 0, column = 0)           
 
+# Continuous thread to keep reading and displaying the serial data
 thread_ShowData = continuous_threading.PausableThread(startTelemetry)
 
+# To disable the Exit Button when the Start button is pressed
 def disableExitButton():
     #   Disable Exit Button (Done when Start button is clicked)    
         button_Exit = Button(frameExit, text = "Exit", width = 4, height = 1, command = mainWindow.quit, state = "disabled")
         button_Exit.grid(row = 0, column = 0)
+
+# To initialize the data fields on the startup
+def initTelemetryDisplay():
+    #   Enable Data Labels on startup    
+        labelVal_GPSFix = Label(frame_Second_Layer, text = "--", width = 12, height = 1, anchor="center", relief = "sunken" )
+        labelVal_GPSFix.grid(row = 0, column = 1)
+    #   Data_2 = GPS_Quality
+        labelVal_GPSQuality = Label(frame_Second_Layer, text = "--", width = 12, height = 1, anchor="center", relief = "sunken" )
+        labelVal_GPSQuality.grid(row = 1, column = 1)
+    #   Data_3 = GPS_Satellites
+        labelVal_GPSSats = Label(frame_Second_Layer, text = "--", width = 12, height = 1, anchor="center", relief = "sunken" )
+        labelVal_GPSSats.grid(row = 2, column = 1)
+    #   Data_4 = GPS_Speed
+        labelVal_GPSSpeed = Label(frame_Second_Layer, text = "--", width = 12, height = 1, anchor="center", relief = "sunken" )
+        labelVal_GPSSpeed.grid(row = 3, column = 1)
+    #   Data_5 = GPS_Latitude
+        labelVal_GPSLatitude = Label(frame_Second_Layer, text = "--", width = 12, height = 1, anchor="center", relief = "sunken" )
+        labelVal_GPSLatitude.grid(row = 0, column = 3)
+    #   Data_6 = GPS_Longitude
+        labelVal_GPSLongitude = Label(frame_Second_Layer, text = "--", width = 12, height = 1, anchor="center", relief = "sunken" )
+        labelVal_GPSLongitude.grid(row = 1, column = 3)
+    #   Data_7 = GPS_Altitude
+        labelVal_GPSAltitude = Label(frame_Second_Layer, text = "--", width = 12, height = 1, anchor="center", relief = "sunken" )
+        labelVal_GPSAltitude.grid(row = 2, column = 3)
+    #   Data_8 = GPS_Latitude_Direction (Heading)
+        labelVal_GPSLati_Dir = Label(frame_Second_Layer, text = "--", width = 12, height = 1, anchor="center", relief = "sunken" )
+        labelVal_GPSLati_Dir.grid(row = 0, column = 4)
+    #   Data_9 = GPS_Longitude_Direction (Heading)
+        labelVal_GPSLong_Dir = Label(frame_Second_Layer, text = "--", width = 12, height = 1, anchor="center", relief = "sunken" )
+        labelVal_GPSLong_Dir.grid(row = 1, column = 4)
+    #   Data_10 = Temperature
+        labelVal_Temperature = Label(frame_Second_Layer, text = "--", width = 12, height = 1, anchor="center", relief = "sunken" )
+        labelVal_Temperature.grid(row = 0, column = 6)
+    #   Data_11 = Altitude
+        labelVal_BaroAltitude = Label(frame_Second_Layer, text = "--", width = 12, height = 1, anchor="center", relief = "sunken" )
+        labelVal_BaroAltitude.grid(row = 1, column = 6)
+    #   Data_12 = Voltage Level 3v
+        labelVal_3vLevel = Label(frame_Second_Layer, text = "--", width = 12, height = 1, anchor="center", relief = "sunken" )
+        labelVal_3vLevel.grid(row = 2, column = 6)
+    #   Data_13 = Voltage Level 5v
+        labelVal_5vLevel = Label(frame_Second_Layer, text = "--", width = 12, height = 1, anchor="center", relief = "sunken" )
+        labelVal_5vLevel.grid(row = 3, column = 6)
+    #   Data_14 = Orientation X Axis
+        labelVal_Xaxis = Label(frame_Second_Layer, text = "--", width = 12, height = 1, anchor="center", relief = "sunken" )
+        labelVal_Xaxis.grid(row = 0, column = 8)
+    #   Data_15 = Orientation Y Axis
+        labelVal_Yaxis = Label(frame_Second_Layer, text = "--", width = 12, height = 1, anchor="center", relief = "sunken" )
+        labelVal_Yaxis.grid(row = 1, column = 8)    
+    #   Data_16 = Orientation Z Axis
+        labelVal_Zaxis = Label(frame_Second_Layer, text = "--", width = 12, height = 1, anchor="center", relief = "sunken" )
+        labelVal_Zaxis.grid(row = 2, column = 8)     
 # ----------------------------------------------------------------------------------------------------------------------------------
 #                                                       Buttons
 # ----------------------------------------------------------------------------------------------------------------------------------
@@ -244,9 +297,11 @@ button_StartStopIndicator.grid(row = 0, column = 2)
 button_Exit = Button(frameExit, text = "Exit", width = 4, height = 1, command = mainWindow.quit)
 button_Exit.grid(row = 0, column = 0)
 
+# ----------------------------------------------------------------------------------------------------------------------------------
+#                                           Initializing Telemetry Data Fields
+# ----------------------------------------------------------------------------------------------------------------------------------
 
-
-
+initTelemetryDisplay()
 
 # ----------------------------------------------------------------------------------------------------------------------------------
 # -- Event Looping
