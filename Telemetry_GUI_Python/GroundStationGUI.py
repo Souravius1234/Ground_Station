@@ -63,7 +63,7 @@ frameExit.grid(row = 0, column = 2, padx = 25, pady = 25)
 label_port = Label(frame_Controls, text = "Port :", width = 4, height = 1)
 label_port.grid(row = 1, column = 0)
 # -- Display Connected ComPort
-label_port = Label(frame_Controls, text = ComPortAvailable, width = 4, height = 1)
+label_port = Label(frame_Controls, text = ComPortAvailable, width = 6, height = 1)
 label_port.grid(row = 1, column = 1)
 
 # -- Second layer of main Window [Label Frames: Telemetry Data]
