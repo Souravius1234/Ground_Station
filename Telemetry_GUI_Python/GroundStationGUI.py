@@ -147,55 +147,55 @@ def startTelemetry():
     splitData = receivedTelemetry.split(",")
 #   Print Split data for debugging
    #print(splitData)
-    if len(splitData) > 1:
+    if (len(splitData) > 1):
         if (splitData[0] == "<") and (splitData[17] == ">"):
 #       Displaying Received Data        
-        #   Data_1 = GPS_Fix
+        #   GPS_Fix = splitData[1]
             labelVal_GPSFix = Label(frame_Second_Layer, text = splitData[1], width = 12, height = 1, anchor="w", relief = "sunken" )
             labelVal_GPSFix.grid(row = 0, column = 1)
-        #   Data_2 = GPS_Quality
+        #   GPS_Quality = splitData[2]
             labelVal_GPSQuality = Label(frame_Second_Layer, text = splitData[2], width = 12, height = 1, anchor="w", relief = "sunken" )
             labelVal_GPSQuality.grid(row = 1, column = 1)
-        #   Data_3 = GPS_Satellites
+        #   GPS_Satellites = splitData[3]
             labelVal_GPSSats = Label(frame_Second_Layer, text = splitData[3], width = 12, height = 1, anchor="w", relief = "sunken" )
             labelVal_GPSSats.grid(row = 2, column = 1)
-        #   Data_4 = GPS_Speed
-            labelVal_GPSSpeed = Label(frame_Second_Layer, text = splitData[4], width = 12, height = 1, anchor="w", relief = "sunken" )
+        #   GPS_Speed = splitData[7]
+            labelVal_GPSSpeed = Label(frame_Second_Layer, text = splitData[7], width = 12, height = 1, anchor="w", relief = "sunken" )
             labelVal_GPSSpeed.grid(row = 3, column = 1)
-        #   Data_5 = GPS_Latitude
+        #   GPS_Latitude = splitData[5]
             labelVal_GPSLatitude = Label(frame_Second_Layer, text = splitData[5], width = 12, height = 1, anchor="w", relief = "sunken" )
             labelVal_GPSLatitude.grid(row = 0, column = 3)
-        #   Data_6 = GPS_Longitude
+        #   GPS_Longitude = splitData[6]
             labelVal_GPSLongitude = Label(frame_Second_Layer, text = splitData[6], width = 12, height = 1, anchor="w", relief = "sunken" )
             labelVal_GPSLongitude.grid(row = 1, column = 3)
-        #   Data_7 = GPS_Altitude
-            labelVal_GPSAltitude = Label(frame_Second_Layer, text = splitData[7], width = 12, height = 1, anchor="w", relief = "sunken" )
+        #   GPS_Altitude = splitData[4]
+            labelVal_GPSAltitude = Label(frame_Second_Layer, text = splitData[4], width = 12, height = 1, anchor="w", relief = "sunken" )
             labelVal_GPSAltitude.grid(row = 2, column = 3)
-        #   Data_8 = GPS_Latitude_Direction (Heading)
+        #   GPS_Latitude_Direction (Heading) = splitData[8]
             labelVal_GPSLati_Dir = Label(frame_Second_Layer, text = splitData[8], width = 12, height = 1, anchor="w", relief = "sunken" )
             labelVal_GPSLati_Dir.grid(row = 0, column = 4)
-        #   Data_9 = GPS_Longitude_Direction (Heading)
+        #   GPS_Longitude_Direction (Heading) = splitData[9]
             labelVal_GPSLong_Dir = Label(frame_Second_Layer, text = splitData[9], width = 12, height = 1, anchor="w", relief = "sunken" )
             labelVal_GPSLong_Dir.grid(row = 1, column = 4)
-        #   Data_10 = Temperature
-            labelVal_Temperature = Label(frame_Second_Layer, text = splitData[10], width = 12, height = 1, anchor="w", relief = "sunken" )
+        #   Temperature = splitData[13]
+            labelVal_Temperature = Label(frame_Second_Layer, text = splitData[13], width = 12, height = 1, anchor="w", relief = "sunken" )
             labelVal_Temperature.grid(row = 0, column = 6)
-        #   Data_11 = Altitude
-            labelVal_BaroAltitude = Label(frame_Second_Layer, text = splitData[11], width = 12, height = 1, anchor="w", relief = "sunken" )
+        #   Altitude = splitData[12]
+            labelVal_BaroAltitude = Label(frame_Second_Layer, text = splitData[12], width = 12, height = 1, anchor="w", relief = "sunken" )
             labelVal_BaroAltitude.grid(row = 1, column = 6)
-        #   Data_12 = Voltage Level 3v
-            labelVal_3vLevel = Label(frame_Second_Layer, text = splitData[12], width = 12, height = 1, anchor="w", relief = "sunken" )
+        #   Voltage Level 3v = splitData[11]
+            labelVal_3vLevel = Label(frame_Second_Layer, text = splitData[11], width = 12, height = 1, anchor="w", relief = "sunken" )
             labelVal_3vLevel.grid(row = 2, column = 6)
-        #   Data_13 = Voltage Level 5v
-            labelVal_5vLevel = Label(frame_Second_Layer, text = splitData[13], width = 12, height = 1, anchor="w", relief = "sunken" )
+        #   Voltage Level 5v = splitData[10]
+            labelVal_5vLevel = Label(frame_Second_Layer, text = splitData[10], width = 12, height = 1, anchor="w", relief = "sunken" )
             labelVal_5vLevel.grid(row = 3, column = 6)
-        #   Data_14 = Orientation X Axis
+        #   Orientation X Axis = splitData[14]
             labelVal_Xaxis = Label(frame_Second_Layer, text = splitData[14], width = 12, height = 1, anchor="w", relief = "sunken" )
             labelVal_Xaxis.grid(row = 0, column = 8)
-        #   Data_15 = Orientation Y Axis
+        #   Orientation Y Axis = splitData[15]
             labelVal_Yaxis = Label(frame_Second_Layer, text = splitData[15], width = 12, height = 1, anchor="w", relief = "sunken" )
             labelVal_Yaxis.grid(row = 1, column = 8)    
-        #   Data_16 = Orientation Z Axis
+        #   Orientation Z Axis = splitData[16]
             labelVal_Zaxis = Label(frame_Second_Layer, text = splitData[16], width = 12, height = 1, anchor="w", relief = "sunken" )
             labelVal_Zaxis.grid(row = 2, column = 8)
         #   Raw Data
